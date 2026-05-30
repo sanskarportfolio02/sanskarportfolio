@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanskar Wadhwa — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #0e0e0e; color: #f0f0f0; min-height: 100vh; padding: 3rem 1.5rem; }
+    .container { max-width: 700px; margin: 0 auto; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6200; font-weight: 500; margin-bottom: 0.75rem; }
+    .hero-name { font-family: 'Syne', sans-serif; font-size: 56px; font-weight: 800; line-height: 1.0; color: #f0f0f0; margin-bottom: 1rem; }
+    .hero-name span { color: #FF6200; }
+    .hero-line { font-size: 15px; color: #888; line-height: 1.7; max-width: 460px; margin-bottom: 1.5rem; }
+    .hero-links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 3rem; }
+    .pill { font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 100px; border: 1px solid #333; color: #aaa; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .pill:hover { border-color: #FF6200; color: #FF6200; }
+    .pill.orange { background: #FF6200; color: #fff; border-color: #FF6200; }
+    .divider { height: 1px; background: #1e1e1e; margin: 2.5rem 0; }
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #555; font-weight: 500; margin-bottom: 1.25rem; }
+    .about-text { font-size: 15px; line-height: 1.8; color: #888; }
+    .about-text strong { color: #f0f0f0; font-weight: 500; }
+    .projects { display: flex; flex-direction: column; gap: 1rem; }
+    .project-card { background: #141414; border: 1px solid #1e1e1e; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s; }
+    .project-card:hover { border-color: #333; }
+    .project-card.featured { border-left: 2px solid #FF6200; }
+    .pc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+    .pc-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #f0f0f0; }
+    .pc-tag { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 100px; background: #1e1e1e; color: #666; white-space: nowrap; flex-shrink: 0; }
+    .pc-tag.orange { background: rgba(255,98,0,0.12); color: #FF6200; }
+    .pc-tag.live { background: rgba(99,153,34,0.12); color: #7ab648; }
+    .pc-tag.upcoming { background: rgba(186,117,23,0.12); color: #c98e2a; }
+    .pc-desc { font-size: 13px; color: #666; line-height: 1.65; margin-bottom: 0.75rem; }
+    .pc-stat { font-size: 12px; font-weight: 500; color: #FF6200; }
+    .pc-meta { font-size: 12px; color: #444; margin-top: 6px; }
+    .pc-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; font-size: 12px; font-weight: 500; color: #FF6200; text-decoration: none; border: 1px solid rgba(255,98,0,0.3); padding: 4px 12px; border-radius: 100px; transition: background 0.2s; }
+    .pc-link:hover { background: rgba(255,98,0,0.1); }
+    .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+    @media (max-width: 600px) { .numbers-grid { grid-template-columns: repeat(2, 1fr); } .hero-name { font-size: 40px; } }
+    .number-card { background: #141414; border-radius: 10px; padding: 1rem; }
+    .nc-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #555; margin-bottom: 0.4rem; }
+    .nc-val { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: #f0f0f0; }
+    .nc-sub { font-size: 11px; color: #444; margin-top: 3px; }
+    .skills-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { font-size: 12px; padding: 5px 13px; border-radius: 100px; border: 1px solid #1e1e1e; color: #666; }
+    .contact-block { background: #141414; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .cb-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #555; margin-bottom: 6px; }
+    .cb-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #f0f0f0; margin-bottom: 4px; }
+    .cb-sub { font-size: 13px; color: #555; }
+    .cb-mail { font-size: 14px; color: #FF6200; font-weight: 500; text-decoration: none; }
+    .cb-mail:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="hero">
+      <p class="hero-tag">Portfolio — 2025</p>
+      <h1 class="hero-name">Sanskar<br><span>Wadhwa.</span></h1>
+      <p class="hero-line">Content strategist & brand marketer. Storytelling-first approach — building audiences, not just impressions.</p>
+      <div class="hero-links">
+        <a class="pill orange" href="https://www.instagram.com/sanskar_wadhwa23" target="_blank">@sanskar_wadhwa23</a>
+        <a class="pill" href="https://www.linkedin.com/in/sanskar-wadhwa-98b402220" target="_blank">LinkedIn</a>
+        <a class="pill" href="mailto:wadhwasanskar024@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <p class="section-label">About</p>
+      <p class="about-text">MBA in Marketing from Alliance University. I build content that actually means something — indie music storytelling, brand campaigns that run on zero ad spend, and strategy decks that don't look like every other deck. My best work lives at the intersection of <strong>culture, brand, and community</strong>. Currently based in Bangalore, open to roles in content strategy, social media, and brand marketing.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <p class="section-label">Work & Projects</p>
+      <div class="projects">
+
+        <div class="project-card featured">
+          <div class="pc-top">
+            <span class="pc-title">Acko Insurance — UGC Ad Campaign</span>
+            <span class="pc-tag upcoming">Post-production</span>
+          </div>
+          <p class="pc-desc">Selected as on-camera UGC creator for Acko Insurance after being discovered through Instagram. Executed a scripted video shoot produced by Buzz Lab, Acko's marketing agency.</p>
+          <p class="pc-stat">Buzz Lab × Acko Insurance · Video shoot completed</p>
+
+        </div>
+
+        <div class="project-card featured">
+          <div class="pc-top">
+            <span class="pc-title">Crazy Cheezy — UGC Hyperlocal Campaign</span>
+            <span class="pc-tag orange">Brand Marketing</span>
+          </div>
+          <p class="pc-desc">Self-initiated UGC campaign for a local QSR brand. Zero ad spend. Built grassroots social proof through hyperlocal content targeting Bangalore's college crowd. Drove measurable in-store impact without any paid distribution.</p>
+          <p class="pc-stat">25% increase in footfall — zero ad budget</p>
+        </div>
+
+        <div class="project-card featured">
+          <div class="pc-top">
+            <span class="pc-title">Indie Music Reel — Khat by Navjot Ahuja</span>
+            <span class="pc-tag orange">Content Creation</span>
+          </div>
+          <p class="pc-desc">Storytelling reel following the Artist Story → Song Meaning → Life Lesson format. Focused on underrated Indian indie music. Reached a highly engaged niche audience with zero paid promotion.</p>
+          <p class="pc-stat">168K+ organic views — @sanskar_wadhwa23</p>
+          <a class="pc-link" href="https://www.instagram.com/reel/DTsgA5qDCpM/?igsh=MTJ3bjk2MXAxajV1dA==" target="_blank">&#9654; Watch the reel</a>
+        </div>
+
+        <div class="project-card">
+          <div class="pc-top">
+            <span class="pc-title">Aaj Aap Sevan Kare — Daily Rec Series</span>
+            <span class="pc-tag live">Ongoing</span>
+          </div>
+          <p class="pc-desc">Daily music and movie recommendation series built around personal storytelling. Restarted after a 365-day challenge attempt — now running with a cleaner format and consistent cadence.</p>
+          <p class="pc-stat">Music · Movies · Everyday culture</p>
+        </div>
+
+        <div class="project-card">
+          <div class="pc-top">
+            <span class="pc-title">Content Strategy Assignment — Owled Media</span>
+            <span class="pc-tag">Strategy & Design</span>
+          </div>
+          <p class="pc-desc">Delivered a full content strategy package — reel in 60-40 format, Instagram carousel in editorial style, and a brand strategy analysis deck. Three formats, one brief, tight turnaround.</p>
+          <p class="pc-stat">Reel editing · Carousel design · Deck strategy</p>
+          <a class="pc-link" href="https://drive.google.com/drive/folders/1_LKBnHIHhxn3vmqwFvifPqqHb4xstSWD" target="_blank">&#128196; View the work</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <p class="section-label">By the numbers</p>
+      <div class="numbers-grid">
+        <div class="number-card">
+          <p class="nc-label">Organic reach</p>
+          <p class="nc-val">168K+</p>
+          <p class="nc-sub">Single reel, no paid boost</p>
+        </div>
+        <div class="number-card">
+          <p class="nc-label">Footfall impact</p>
+          <p class="nc-val">+25%</p>
+          <p class="nc-sub">Crazy Cheezy UGC</p>
+        </div>
+        <div class="number-card">
+          <p class="nc-label">Brand shoots</p>
+          <p class="nc-val">1</p>
+          <p class="nc-sub">Acko via Buzz Lab</p>
+        </div>
+        <div class="number-card">
+          <p class="nc-label">Ad spend</p>
+          <p class="nc-val">₹0</p>
+          <p class="nc-sub">All organic growth</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="margin-bottom: 2.5rem;">
+      <p class="section-label">Skills & tools</p>
+      <div class="skills-row">
+        <span class="skill-tag">Content Strategy</span>
+        <span class="skill-tag">Social Media (Instagram)</span>
+        <span class="skill-tag">UGC Campaigns</span>
+        <span class="skill-tag">Brand Storytelling</span>
+        <span class="skill-tag">On-camera Performance</span>
+        <span class="skill-tag">Reel Editing</span>
+        <span class="skill-tag">Carousel Design</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Deck Design</span>
+        <span class="skill-tag">Community Building</span>
+        <span class="skill-tag">Hinglish Copywriting</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="contact-block">
+      <div>
+        <p class="cb-label">Open to opportunities</p>
+        <p class="cb-name">Sanskar Wadhwa</p>
+        <p class="cb-sub">Content Strategy · Social Media · Brand Marketing · Bangalore</p>
+      </div>
+      <a class="cb-mail" href="mailto:wadhwasanskar024@gmail.com">wadhwasanskar024@gmail.com</a>
+    </div>
+
+  </div>
+</body>
+</html>
